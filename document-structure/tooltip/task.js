@@ -7,11 +7,10 @@ phrases.forEach(elem => {
         event.preventDefault();
         let tooltip = elem.nextElementSibling;
         tooltip.style.left = `${elem.getBoundingClientRect().left}px` ;
+        tooltip.style.top = `${elem.getBoundingClientRect().top + 20}px`
         tooltip.classList.toggle('tooltip_active');
     });
 });
-
-
 
 
 /* document.addEventListener('click', (event) => {
