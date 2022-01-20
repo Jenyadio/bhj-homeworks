@@ -42,13 +42,14 @@ input.addEventListener('keydown', function(event) {
 
     let robotMessagesRandom = robotMessages[Math.floor(Math.random() * robotMessages.length)];
 
-    if (input.value !== ' ' && event.code === 'Enter') {
+    if (input.value !== '' && event.code === 'Enter') {
         messagesAll.innerHTML += `
         <div class="message message_client">
             <div class="message__time">${time}</div>
             <div class="message__text">${event.target.value}</div>
         </div>` 
         ;
+        input.value = '';
         scroll();
         messagesAll.innerHTML += `
         <div class="message">
