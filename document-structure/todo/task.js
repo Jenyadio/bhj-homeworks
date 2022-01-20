@@ -3,7 +3,7 @@ const tasksList = document.querySelector('.tasks__list');
 const button = document.querySelector('.tasks__add');
 
 function addTask() {
-    if (input.value.trim !== ' ') {
+    if (input.value !== '') {
         tasksList.insertAdjacentHTML('afterBegin', `
         <div class="task">
             <div class="task__title">
@@ -22,10 +22,13 @@ input.addEventListener('keydown', (event) => {
     }
 });
 
-button.onclick = () => addTask();
+button.onclick = (event) => {
+    event.preventDefault();
+    addTask();
+}
 
 
-document.addEventListener('click', function(event) {
+tasksList.addEventListener('click', (event) => {
     if(event.target.classList.contains('task__remove')) {
         event.target.parentElement.remove();
     };
